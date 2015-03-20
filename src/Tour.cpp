@@ -29,7 +29,12 @@ bool Tour::verifierDeplacement(string c1, string c2) {
     int* co1 = coordonnees(c1);
     int* co2 = coordonnees(c2);
 
-    return co1[0] == co2[0] || co1[1] == co2[1];
+    bool ret = co1[0] == co2[0] || co1[1] == co2[1];
+
+    delete[] co1;
+    delete[] co2;
+
+    return ret;
 }
 
 
