@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1426841797 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
+1426845600 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
 	<iostream>
 	<cstdlib>
 	"Partie.h"
