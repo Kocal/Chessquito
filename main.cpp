@@ -10,14 +10,20 @@
 
 using namespace std;
 
+const int taille = 4;
+typedef Piece* Plateau[taille][taille];
+
 void separation(void);
+void initPlateau(Plateau);
+int * coordonnees(string);
 
 int main() {
+    Plateau plateau;
 
     Partie* partie = new Partie("2015-03-30");
+
     Joueur* j1 = new Joueur("Alpha");
     Joueur* j2 = new Joueur("Beta");
-    //Joueur* j3 = new Joueur("Gamma");
 
     partie->setJoueur(j1);
     partie->setJoueur(j2);
@@ -87,7 +93,18 @@ int main() {
     separation();
     */
 
+    initPlateau(plateau);
 
+    /*
+    int *coor = coordonnees("a1");
+    cout << coor[0] << " - " << coor[1] << endl;
+
+    coor = coordonnees("c3");
+    cout << coor[0] << " - " << coor[1] << endl;
+
+    coor = coordonnees("d4");
+    cout << coor[0] << " - " << coor[1] << endl;
+    */
 
 
     if(j1) delete j1;
@@ -97,6 +114,23 @@ int main() {
     return EXIT_SUCCESS;
 }
 
-void separation() {
+void separation(void) {
     cout << "----------------------------" << endl;
+}
+
+void initPlateau(Plateau p) {
+    for(int i = 0; i < taille; i++) {
+        for(int j = 0; j < taille; j++) {
+            p[i][j] = NULL;
+        }
+    }
+}
+
+int* coordonnees(string n) {
+    int *p = new int[2];
+
+    p[0] = n[0] + 1 - 'a';
+    p[1] = n[1] - '0';
+
+    return p;
 }
