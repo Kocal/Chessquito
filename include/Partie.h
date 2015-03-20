@@ -3,8 +3,12 @@
 
 #include <string>
 #include "Joueur.h"
+#include "Piece.h"
 
 using namespace std;
+
+const int plateauTaille = 4;
+typedef Piece* Plateau[plateauTaille][plateauTaille];
 
 class Joueur;
 
@@ -22,10 +26,14 @@ class Partie
         void quittePartie(Joueur*);
         bool estJouable(void);
 
+        void initPlateau(void);
+
     private:
         string date;
         int nbJoueurs;
         int nbJoueursMax;
+
+        Plateau plateau;
 
         Joueur* j1;
         Joueur* j2;

@@ -44,6 +44,14 @@ bool Partie::estJouable(void) {
     return this->nbJoueurs == this->nbJoueursMax;
 }
 
+void Partie::initPlateau(void) {
+    for(int i = 0; i < plateauTaille; i++) {
+        for(int j = 0; j < plateauTaille; j++) {
+            this->plateau[i][j] = NULL;
+        }
+    }
+}
+
 Partie::~Partie()
 {
     cout << "La partie va s'arrêter." << endl;

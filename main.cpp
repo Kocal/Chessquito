@@ -12,11 +12,6 @@
 
 using namespace std;
 
-const int taille = 4;
-typedef Piece* Plateau[taille][taille];
-
-void initPlateau(Plateau);
-
 int main() {
     Plateau plateau;
 
@@ -93,7 +88,7 @@ int main() {
     separation();
     */
 
-    initPlateau(plateau);
+    partie->initPlateau();
 
     /*
     int *coor = coordonnees("a1");
@@ -106,6 +101,7 @@ int main() {
     cout << coor[0] << " - " << coor[1] << endl;
     */
 
+    /*
     separation();
 
     Tour tour(COULEUR_BLANC);
@@ -125,18 +121,16 @@ int main() {
     cout << "(c1;c3) : " << fou.verifierDeplacement("c1", "c3") << endl;
 
     separation();
+    */
+
+
+    Tour *tblanc = new Tour(COULEUR_BLANC);
+
+
 
     if(j1) delete j1;
     if(j2) delete j2;
     if(partie) delete partie;
 
     return EXIT_SUCCESS;
-}
-
-void initPlateau(Plateau p) {
-    for(int i = 0; i < taille; i++) {
-        for(int j = 0; j < taille; j++) {
-            p[i][j] = NULL;
-        }
-    }
 }
