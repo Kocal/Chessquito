@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 
+#include "Util.h"
+
 #include "Partie.h"
 #include "Joueur.h"
 
@@ -104,11 +106,25 @@ int main() {
     cout << coor[0] << " - " << coor[1] << endl;
     */
 
-    Tour tour(COULEUR_BLANC);
-    cout << tour.verifierDeplacement("a1", "a4") << endl;
-    cout << tour.verifierDeplacement("b1", "a4") << endl;
-    cout << tour.verifierDeplacement("c3", "a3") << endl;
+    separation();
 
+    Tour tour(COULEUR_BLANC);
+    tour.affichage();
+    cout << "(a1;a4 : " << tour.verifierDeplacement("a1", "a4") << endl;
+    cout << "(b1;a4) : " << tour.verifierDeplacement("b1", "a4") << endl;
+    cout << "(c3;a4) : " << tour.verifierDeplacement("c3", "a4") << endl;
+
+
+    separation();
+
+    Fou fou(COULEUR_NOIR);
+    fou.affichage();
+    cout << "(a1;c3) : " << fou.verifierDeplacement("a1", "c3") << endl;
+    cout << "(d4;c3) : " << fou.verifierDeplacement("d4", "c3") << endl;
+    cout << "(c3;d4) : " << fou.verifierDeplacement("c3", "d4") << endl;
+    cout << "(c1;c3) : " << fou.verifierDeplacement("c1", "c3") << endl;
+
+    separation();
 
     if(j1) delete j1;
     if(j2) delete j2;

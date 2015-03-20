@@ -12,6 +12,9 @@ class Fou : public Piece
         Fou(int, int);
         Fou(const Fou&);
         virtual ~Fou();
+
+        bool verifierDeplacement(string, string);
+        void affichage();
     protected:
     private:
 };

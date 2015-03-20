@@ -6,6 +6,7 @@
 #define COULEUR_BLANC 0
 #define COULEUR_NOIR 1
 
+
 #define ETAT_DISPONIBLE 0
 #define ETAT_PLACE 1
 #define ETAT_PRIS 2
@@ -27,7 +28,7 @@ class Piece
         void setEtat(int);
         int getEtat(void);
 
-        bool verifierDeplacement(string, string);
+        void affichage(string, int);
 
     protected:
         int couleur;

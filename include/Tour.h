@@ -13,6 +13,7 @@ class Tour : public Piece
         virtual ~Tour();
 
         bool verifierDeplacement(string, string);
+        void affichage();
     protected:
 
     private:

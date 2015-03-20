@@ -1,6 +1,8 @@
+#include <iostream>
+#include <cmath>
+#include "Util.h"
 #include "Piece.h"
 #include "Fou.h"
-#include <iostream>
 
 using namespace std;
 
@@ -18,6 +20,17 @@ Fou::Fou(int c, int e) : Piece(c, e) {
 
 Fou::Fou(Fou const& t) : Piece(t) {
     cout << "Fou(Fou const& t)" << endl;
+}
+
+bool Fou::verifierDeplacement(string c1, string c2) {
+    int* co1 = coordonnees(c1);
+    int* co2 = coordonnees(c2);
+
+    return abs(co1[0] - co2[0]) == abs(co1[1] - co2[1]);
+}
+
+void Fou::affichage() {
+    Piece::affichage("Fou", this->couleur);
 }
 
 Fou::~Fou()

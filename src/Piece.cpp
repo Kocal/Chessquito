@@ -39,6 +39,22 @@ int Piece::getEtat(void) {
     return this->etat;
 }
 
+void Piece::affichage(string nom, int couleur) {
+    cout << "Pièce : " << nom << " ; couleur : ";
+
+    switch(couleur) {
+        case 0:
+            cout << "blanc";
+            break;
+
+        case 1:
+            cout << "noir";
+            break;
+    }
+
+    cout << endl;
+}
+
 Piece::~Piece()
 {
     //dtor
