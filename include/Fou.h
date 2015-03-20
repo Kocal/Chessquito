@@ -9,7 +9,8 @@ class Fou : public Piece
     public:
         Fou();
         Fou(int);
-        Fou (const Fou&);
+        Fou(int, int);
+        Fou(const Fou&);
         virtual ~Fou();
     protected:
     private:

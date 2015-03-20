@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1426841252 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
+1426841797 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
 	<iostream>
 	<cstdlib>
 	"Partie.h"
@@ -24,16 +24,17 @@
 	"Joueur.h"
 	<iostream>
 
-1426837681 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Fou.cpp
+1426841811 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Fou.cpp
+	"Piece.h"
 	"Fou.h"
 	<iostream>
 
-1426839406 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Fou.h
+1426841830 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Fou.h
 	"Piece.h"
 
 1426841095 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Piece.h
 
-1426841404 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Piece.cpp
+1426841464 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Piece.cpp
 	<iostream>
 	"Piece.h"
 
