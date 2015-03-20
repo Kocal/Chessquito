@@ -37,18 +37,18 @@ int main() {
     }
     */
 
+    /*
     separation();
+
     cout << "INITIALISATION DES TOURS" << endl;
 
     Tour tour;
     tour.setCouleur(COULEUR_NOIR);
     cout << "Couleur de la nouvelle tour : " << tour.getCouleur() << endl;
 
-
     separation();
 
     Tour tour_blanche(COULEUR_BLANC);
-
 
     separation();
 
@@ -58,6 +58,7 @@ int main() {
     cout << "Nouvelle couleur : " << tour_noire.getCouleur() << endl;
 
     separation();
+
     Tour tour_foo(COULEUR_BLANC, ETAT_DISPONIBLE);
 
     separation();
@@ -84,7 +85,7 @@ int main() {
     Fou fou_foo(COULEUR_BLANC, ETAT_DISPONIBLE);
 
     separation();
-
+    */
 
 
 
