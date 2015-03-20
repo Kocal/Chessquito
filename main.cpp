@@ -125,6 +125,21 @@ int main() {
 
 
     Tour *tblanc = new Tour(COULEUR_BLANC);
+    Fou *fnoir = new Fou(COULEUR_NOIR);
+
+    if(partie->placePiece(tblanc, "a2")) {
+        // S'éxecute
+        cout << "La pièce a bien été placée" << endl;
+    } else {
+        cout << "La pièce n'a pas été placée" << endl;
+    }
+
+    if(partie->placePiece(fnoir, "a2")) {
+        cout << "La pièce a bien été placée" << endl;
+    } else {
+        // S'éxecute
+        cout << "La pièce n'a pas été placée" << endl;
+    }
 
 
 

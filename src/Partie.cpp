@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Partie.h"
+#include "Util.h"
 
 using namespace std;
 
@@ -50,6 +51,24 @@ void Partie::initPlateau(void) {
             this->plateau[i][j] = NULL;
         }
     }
+}
+
+bool Partie::placePiece(Piece* piece, string c) {
+    int* co = coordonnees(c);
+    int x = co[0];
+    int y = co[1];
+
+    if(x < 0 || x >= plateauTaille
+    || y < 0 || y >= plateauTaille) {
+        return false;
+    }
+
+    if(this->plateau[x][y] != NULL) {
+        return false;
+    }
+
+    this->plateau[x][y] = piece;
+    return true;
 }
 
 Partie::~Partie()

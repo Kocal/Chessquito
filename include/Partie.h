@@ -27,6 +27,7 @@ class Partie
         bool estJouable(void);
 
         void initPlateau(void);
+        bool placePiece(Piece*, string);
 
     private:
         string date;
