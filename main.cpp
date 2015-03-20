@@ -13,9 +13,7 @@ using namespace std;
 const int taille = 4;
 typedef Piece* Plateau[taille][taille];
 
-void separation(void);
 void initPlateau(Plateau);
-int * coordonnees(string);
 
 int main() {
     Plateau plateau;
@@ -106,6 +104,11 @@ int main() {
     cout << coor[0] << " - " << coor[1] << endl;
     */
 
+    Tour tour(COULEUR_BLANC);
+    cout << tour.verifierDeplacement("a1", "a4") << endl;
+    cout << tour.verifierDeplacement("b1", "a4") << endl;
+    cout << tour.verifierDeplacement("c3", "a3") << endl;
+
 
     if(j1) delete j1;
     if(j2) delete j2;
@@ -114,23 +117,10 @@ int main() {
     return EXIT_SUCCESS;
 }
 
-void separation(void) {
-    cout << "----------------------------" << endl;
-}
-
 void initPlateau(Plateau p) {
     for(int i = 0; i < taille; i++) {
         for(int j = 0; j < taille; j++) {
             p[i][j] = NULL;
         }
     }
-}
-
-int* coordonnees(string n) {
-    int *p = new int[2];
-
-    p[0] = n[0] + 1 - 'a';
-    p[1] = n[1] - '0';
-
-    return p;
 }

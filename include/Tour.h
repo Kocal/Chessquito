@@ -12,6 +12,7 @@ class Tour : public Piece
         Tour(const Tour&);
         virtual ~Tour();
 
+        bool verifierDeplacement(string, string);
     protected:
 
     private:

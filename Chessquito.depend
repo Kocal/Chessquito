@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1426845600 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
+1426847465 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
 	<iostream>
 	<cstdlib>
 	"Partie.h"
@@ -32,17 +32,34 @@
 1426841830 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Fou.h
 	"Piece.h"
 
-1426841095 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Piece.h
+1426846566 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Piece.h
+	<iostream>
 
 1426841464 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Piece.cpp
 	<iostream>
 	"Piece.h"
 
-1426841269 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Tour.h
+1426846590 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Tour.h
 	"Piece.h"
 
-1426841422 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Tour.cpp
+1426847292 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Tour.cpp
 	<iostream>
+	"Util.h"
 	"Piece.h"
 	"Tour.h"
+
+1426846670 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/util.cpp
+	<iostream>
+
+1426846538 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/util.cpp
+	<iostream>
+
+1426847155 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/util.h
+	<iostream>
+
+1426847355 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Util.h
+	<iostream>
+
+1426847359 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Util.cpp
+	"Util.h"
 
