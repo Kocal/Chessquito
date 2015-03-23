@@ -53,7 +53,7 @@ void Partie::initPlateau(void) {
     }
 }
 
-bool Partie::placePiece(Piece* piece, string c) {
+bool Partie::canPieceBePlaced(string c) {
     int* co = coordonnees(c);
     int x = co[0];
     int y = co[1];
@@ -67,12 +67,46 @@ bool Partie::placePiece(Piece* piece, string c) {
         return false;
     }
 
-    this->plateau[x][y] = piece;
     return true;
 }
 
-Partie::~Partie()
-{
+bool Partie::setPiece(Piece* piece, string c) {
+    int *co = coordonnees(c);
+    int x = co[0];
+    int y = co[1];
+
+    delete[] co;
+
+    if(this->canPieceBePlaced(c)) {
+        this->plateau[x][y] = piece;
+        return true;
+    }
+
+    return false;
+}
+
+Piece* Partie::getPiece(int x , int y) {
+    return this->plateau[x][y];
+}
+
+Piece* Partie::operator()(int x) {
+    return this->getPiece(x, 0);
+}
+
+Piece* Partie::operator()(int x, int y) {
+    return this->getPiece(x, y);
+}
+
+Piece* Partie::operator()(string c) {
+    int* co = coordonnees(c);
+    int x = co[0];
+    int y = co[1];
+
+    delete[] co;
+    return this->getPiece(x, y);
+}
+
+Partie::~Partie() {
     cout << "La partie va s'arrêter." << endl;
     if(this->j1) {
         this->j1->setPartie(NULL);

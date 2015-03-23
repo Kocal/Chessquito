@@ -13,8 +13,6 @@
 using namespace std;
 
 int main() {
-    Plateau plateau;
-
     Partie* partie = new Partie("2015-03-30");
 
     Joueur* j1 = new Joueur("Alpha");
@@ -124,23 +122,20 @@ int main() {
     */
 
 
-    Tour *tblanc = new Tour(COULEUR_BLANC);
+    Tour *tnoir = new Tour(COULEUR_NOIR);
+    Tour *tblanc = new Tour(*tnoir);
     Fou *fnoir = new Fou(COULEUR_NOIR);
 
-    if(partie->placePiece(tblanc, "a2")) {
-        // S'éxecute
-        cout << "La pièce a bien été placée" << endl;
-    } else {
-        cout << "La pièce n'a pas été placée" << endl;
-    }
+    tblanc->setCouleur(COULEUR_BLANC);
 
-    if(partie->placePiece(fnoir, "a2")) {
-        cout << "La pièce a bien été placée" << endl;
-    } else {
-        // S'éxecute
-        cout << "La pièce n'a pas été placée" << endl;
-    }
+    partie->setPiece(tnoir, "a1");
+    cout << "Tnoir : " << tnoir << " ; partie(0) : " << (*partie)(0) << endl;
 
+    partie->setPiece(tblanc, "a2");
+    cout << "Tblanc : " << tblanc << " ; partie(0, 1) : " << (*partie)(0, 1) << endl;
+
+    partie->setPiece(fnoir, "b3");
+    cout << "Fnoir : " << fnoir << " ; partie(\"b3\") : " << (*partie)("b3") << endl;
 
 
     if(j1) delete j1;

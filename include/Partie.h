@@ -27,7 +27,15 @@ class Partie
         bool estJouable(void);
 
         void initPlateau(void);
-        bool placePiece(Piece*, string);
+
+        bool canPieceBePlaced(string);
+        bool setPiece(Piece*, string);
+        Piece* getPiece(int, int);
+
+        Piece* operator()(int);
+        Piece* operator()(int, int);
+        Piece* operator()(string);
+
 
     private:
         string date;
