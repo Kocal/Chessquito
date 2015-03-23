@@ -6,5 +6,5 @@
 using namespace std;
 
 void separation(void);
-int* coordonnees(string);
+void coordonnees(string, int&, int&);
 #endif // UTIL_H

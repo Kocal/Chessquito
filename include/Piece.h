@@ -30,6 +30,8 @@ class Piece
 
         void affichage(string, int);
 
+        //virtual Piece* operator=(Piece* const&);
+
     protected:
         int couleur;
         int etat;

@@ -54,9 +54,8 @@ void Partie::initPlateau(void) {
 }
 
 bool Partie::canPieceBePlaced(string c) {
-    int* co = coordonnees(c);
-    int x = co[0];
-    int y = co[1];
+    int x, y;
+    coordonnees(c, x, y);
 
     if(x < 0 || x >= plateauTaille
     || y < 0 || y >= plateauTaille) {
@@ -71,11 +70,8 @@ bool Partie::canPieceBePlaced(string c) {
 }
 
 bool Partie::setPiece(Piece* piece, string c) {
-    int *co = coordonnees(c);
-    int x = co[0];
-    int y = co[1];
-
-    delete[] co;
+    int x, y;
+    coordonnees(c, x, y);
 
     if(this->canPieceBePlaced(c)) {
         this->plateau[x][y] = piece;
@@ -85,7 +81,7 @@ bool Partie::setPiece(Piece* piece, string c) {
     return false;
 }
 
-Piece* Partie::getPiece(int x , int y) {
+Piece* Partie::getPiece(int x , int y) const {
     return this->plateau[x][y];
 }
 
@@ -98,11 +94,24 @@ Piece* Partie::operator()(int x, int y) {
 }
 
 Piece* Partie::operator()(string c) {
-    int* co = coordonnees(c);
-    int x = co[0];
-    int y = co[1];
+    int x, y;
+    coordonnees(c, x, y);
 
-    delete[] co;
+    return this->getPiece(x, y);
+}
+
+const Piece* Partie::operator()(int x) const {
+    return this->getPiece(x, 0);
+}
+
+const Piece* Partie::operator()(int x, int y) const {
+    return this->getPiece(x, y);
+}
+
+const Piece* Partie::operator()(string c) const {
+    int x, y;
+    coordonnees(c, x, y);
+
     return this->getPiece(x, y);
 }
 

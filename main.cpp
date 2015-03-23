@@ -86,20 +86,19 @@ int main() {
     separation();
     */
 
+    /*
     partie->initPlateau();
+    int x, y;
+    coordonnees("a1", x, y);
 
-    /*
-    int *coor = coordonnees("a1");
-    cout << coor[0] << " - " << coor[1] << endl;
+    cout << x << " - " << y << endl;
 
-    coor = coordonnees("c3");
-    cout << coor[0] << " - " << coor[1] << endl;
+    coordonnees("c3", x, y);
+    cout << x << " - " << y << endl;
 
-    coor = coordonnees("d4");
-    cout << coor[0] << " - " << coor[1] << endl;
-    */
+    coordonnees("d4", x, y);
+    cout << x << " - " << y << endl;
 
-    /*
     separation();
 
     Tour tour(COULEUR_BLANC);
@@ -119,8 +118,6 @@ int main() {
     cout << "(c1;c3) : " << fou.verifierDeplacement("c1", "c3") << endl;
 
     separation();
-    */
-
 
     Tour *tnoir = new Tour(COULEUR_NOIR);
     Tour *tblanc = new Tour(*tnoir);
@@ -136,6 +133,36 @@ int main() {
 
     partie->setPiece(fnoir, "b3");
     cout << "Fnoir : " << fnoir << " ; partie(\"b3\") : " << (*partie)("b3") << endl;
+
+    separation();
+
+    Partie partie2("2015-01-03");
+    partie2.initPlateau();
+
+    Tour tnoir2(COULEUR_NOIR);
+
+    Tour tblanc2(tnoir2);
+    tblanc2.setCouleur(COULEUR_BLANC);
+
+    partie2.setJoueur(j1);
+    partie2.setPiece(&tnoir2, "a2");
+    partie2.setPiece(&tblanc2, "b4");
+    cout << "tnoir2 : " << &tnoir2 << " ; partie2(\"a2\") : " << partie2("a2") << endl;
+    cout << "tblanc2 : " << &tblanc2 << " ; partie2(\"b4\") : " << partie2("b4") << endl;
+
+    cout << "Fnoir : " << (*partie)("b3") << endl;
+    cout << "\tcouleur : " << (*partie)("b3")->getCouleur() << endl;
+
+    separation();
+
+    cout << "partie2(\"a3\") : " << partie2("a3") << endl;
+    partie2.setPiece(&tblanc2, "a3");
+    cout << "partie2(\"a3\") : " << partie2("a3") << endl;
+
+    separation();
+    */
+
+
 
 
     if(j1) delete j1;

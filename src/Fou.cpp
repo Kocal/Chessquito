@@ -23,15 +23,11 @@ Fou::Fou(Fou const& t) : Piece(t) {
 }
 
 bool Fou::verifierDeplacement(string c1, string c2) {
-    int* co1 = coordonnees(c1);
-    int* co2 = coordonnees(c2);
+    int x, y, x2, y2;
+    coordonnees(c1, x, y);
+    coordonnees(c2, x2, y2);
 
-    bool ret =  abs(co1[0] - co2[0]) == abs(co1[1] - co2[1]);
-
-    delete[] co1;
-    delete[] co2;
-
-    return ret;
+    return abs(x - x2) == abs(y - y2);
 }
 
 void Fou::affichage() {

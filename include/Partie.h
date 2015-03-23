@@ -30,11 +30,15 @@ class Partie
 
         bool canPieceBePlaced(string);
         bool setPiece(Piece*, string);
-        Piece* getPiece(int, int);
+        Piece* getPiece(int, int) const;
 
         Piece* operator()(int);
         Piece* operator()(int, int);
         Piece* operator()(string);
+
+        const Piece* operator()(int) const;
+        const Piece* operator()(int, int) const;
+        const Piece* operator()(string) const;
 
 
     private:

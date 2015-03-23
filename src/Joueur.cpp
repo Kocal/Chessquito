@@ -26,5 +26,7 @@ Partie* Joueur::getPartie(void) {
 
 Joueur::~Joueur() {
     cout << "Le joueur " << this->getNom() << " va quitter la partie" << endl;
-    this->getPartie()->quittePartie(this);
+    if(this->getPartie()) {
+        this->getPartie()->quittePartie(this);
+    }
 }

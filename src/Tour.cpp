@@ -26,17 +26,27 @@ void Tour::affichage() {
 }
 
 bool Tour::verifierDeplacement(string c1, string c2) {
-    int* co1 = coordonnees(c1);
-    int* co2 = coordonnees(c2);
+    int x, y, x2, y2;
+    coordonnees(c1, x, y);
+    coordonnees(c2, x2, y2);
 
-    bool ret = co1[0] == co2[0] || co1[1] == co2[1];
-
-    delete[] co1;
-    delete[] co2;
-
-    return ret;
+    return x == x2 || y == y2;
 }
 
+/*
+const Piece* Tour::operator=(Tour* const& p) const {
+    cout << "Ancienne pièce : " << this << endl;
+    cout << "Nouvelle pièce : " << p << endl;
+
+    if(p != this) {
+        p->setCouleur(this->getCouleur());
+        p->setEtat(this->getEtat());
+        return &p;
+    }
+
+    return NULL;
+}
+*/
 
 Tour::~Tour()
 {
