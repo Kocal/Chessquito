@@ -1,6 +1,7 @@
 #ifndef PARTIE_H
 #define PARTIE_H
 
+#include <iostream>
 #include <string>
 #include "Joueur.h"
 #include "Piece.h"
@@ -40,7 +41,6 @@ class Partie
         const Piece* operator()(int, int) const;
         const Piece* operator()(string) const;
 
-
     private:
         string date;
         int nbJoueurs;
@@ -52,5 +52,7 @@ class Partie
         Joueur* j2;
 
 };
+
+ostream& operator<<(ostream& o, const Partie &);
 
 #endif // PARTIE_H

@@ -34,6 +34,10 @@ void Fou::affichage() {
     Piece::affichage("Fou", this->couleur);
 }
 
+string Fou::getCode() {
+    return Piece::getCode('F', this->couleur);
+}
+
 Fou::~Fou()
 {
     //dtor

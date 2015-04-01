@@ -21,6 +21,10 @@ Tour::Tour(Tour const& t) : Piece(t) {
     cout << "Tour(Tour const& t)" << endl;
 }
 
+string Tour::getCode() {
+    return Piece::getCode('T', this->couleur);
+}
+
 void Tour::affichage() {
     Piece::affichage("Tour", this->couleur);
 }
@@ -32,6 +36,7 @@ bool Tour::verifierDeplacement(string c1, string c2) {
 
     return x == x2 || y == y2;
 }
+
 
 /*
 const Piece* Tour::operator=(Tour* const& p) const {

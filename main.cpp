@@ -162,6 +162,24 @@ int main() {
     separation();
     */
 
+    /*
+    Tour *tb = new Tour(COULEUR_BLANC);
+    Tour *tn = new Tour(COULEUR_NOIR);
+    Fou *fb = new Fou(COULEUR_BLANC);
+    Fou *fn = new Fou(COULEUR_NOIR);
+
+    partie->setPiece(tb, "a0");
+    partie->setPiece(tn, "d3");
+    partie->setPiece(fb, "a3");
+    partie->setPiece(fn, "d0");
+
+    cout << *partie << endl;
+
+    if(tb) delete tb;
+    if(tn) delete tn;
+    if(fb) delete fb;
+    if(fn) delete fn;
+    */
 
 
 

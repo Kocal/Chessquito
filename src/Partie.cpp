@@ -115,6 +115,40 @@ const Piece* Partie::operator()(string c) const {
     return this->getPiece(x, y);
 }
 
+
+ostream& operator<<(ostream &flux, Partie const &p) {
+    for(int i = plateauTaille + 1; i--;) {
+
+        if(i == plateauTaille) {
+            for(int j = 0; j < plateauTaille; j++) {
+                flux << "|  " << (char) (j + 'a') << "  ";
+            }
+
+            flux << '|' << endl;
+            continue;
+        }
+
+        separationPlateau(plateauTaille);
+
+        for(int j = 0; j < plateauTaille; j++) {
+            int x = i;
+            int y = j;
+
+            //flux << "| " << x << ";" << j << " ";
+            if(p.getPiece(x, y)) {
+                flux << "| " << p.getPiece(x, y)->getCode() << "  ";
+            } else {
+                flux << "|     ";
+            }
+        }
+
+        flux << "| " << i << endl;
+
+    }
+
+    return flux;
+}
+
 Partie::~Partie() {
     cout << "La partie va s'arrêter." << endl;
     if(this->j1) {

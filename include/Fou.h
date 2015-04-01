@@ -15,6 +15,8 @@ class Fou : public Piece
 
         bool verifierDeplacement(string, string);
         void affichage();
+        string getCode(void);
+
     protected:
     private:
 };

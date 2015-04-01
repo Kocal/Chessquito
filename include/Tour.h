@@ -15,6 +15,8 @@ class Tour : public Piece
         bool verifierDeplacement(string, string);
         void affichage();
 
+        string getCode(void);
+
         /*
         const Piece* operator=(Tour const &) const;
         Piece* operator=(Tour const&);

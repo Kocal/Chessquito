@@ -1,6 +1,7 @@
 #include <iostream>
+#include <cstdlib>
 #include "Piece.h"
-
+#include "Util.h"
 using namespace std;
 
 Piece::Piece() : couleur(COULEUR_BLANC), etat(ETAT_DISPONIBLE) {
@@ -40,19 +41,18 @@ int Piece::getEtat(void) {
 }
 
 void Piece::affichage(string nom, int couleur) {
-    cout << "Pièce : " << nom << " ; couleur : ";
+    //cout << "Pièce : " << nom << " ; couleur : " << getStringByCouleur(couleur) << endl;
+}
 
-    switch(couleur) {
-        case 0:
-            cout << "blanc";
-            break;
+string Piece::getCode(void) { return "XX";}
 
-        case 1:
-            cout << "noir";
-            break;
-    }
+string Piece::getCode(char piece, int couleur) {
+    string ret;
 
-    cout << endl;
+    ret += piece;
+    ret += getCharByCouleur(couleur);
+
+    return ret;
 }
 
 Piece::~Piece()

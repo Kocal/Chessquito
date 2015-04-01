@@ -3,14 +3,6 @@
 
 #include <iostream>
 
-#define COULEUR_BLANC 0
-#define COULEUR_NOIR 1
-
-
-#define ETAT_DISPONIBLE 0
-#define ETAT_PLACE 1
-#define ETAT_PRIS 2
-
 using namespace std;
 
 class Piece
@@ -29,6 +21,12 @@ class Piece
         int getEtat(void);
 
         void affichage(string, int);
+
+        virtual string getCode(void) = 0;
+        string getCode(char, int);
+
+        virtual bool verifierDeplacement(string, string) = 0;
+
 
         //virtual Piece* operator=(Piece* const&);
 
