@@ -3,7 +3,6 @@
 
 #include "Piece.h"
 
-
 class Fou : public Piece
 {
     public:
