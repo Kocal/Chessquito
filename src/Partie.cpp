@@ -150,7 +150,7 @@ ostream& operator<<(ostream &flux, Partie const &p) {
 }
 
 Partie::~Partie() {
-    cout << "La partie va s'arrêter." << endl;
+    cout << "La partie " << this << " va s'arrêter." << endl;
     if(this->j1) {
         this->j1->setPartie(NULL);
     }
