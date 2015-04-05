@@ -1,13 +1,17 @@
 # depslib dependency file v1.0
-1427890955 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
+1428239131 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/main.cpp
 	<iostream>
 	<cstdlib>
+	<climits>
+	<cmath>
 	"Util.h"
 	"Partie.h"
 	"Joueur.h"
 	"Piece.h"
+	"Reine.h"
 	"Tour.h"
 	"Fou.h"
+	"Cavalier.h"
 
 1427128495 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Partie.h
 	<iostream>
@@ -19,7 +23,7 @@
 	<string>
 	"Partie.h"
 
-1427892127 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Partie.cpp
+1428233336 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Partie.cpp
 	<iostream>
 	"Partie.h"
 	"Util.h"
@@ -35,7 +39,7 @@
 	"Piece.h"
 	"Fou.h"
 
-1427890382 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Fou.h
+1427897221 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Fou.h
 	"Piece.h"
 
 1427892147 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Piece.h
@@ -65,9 +69,27 @@
 1426847155 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/util.h
 	<iostream>
 
-1427889184 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Util.h
+1428221901 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Util.h
 	<iostream>
 
-1427890967 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Util.cpp
+1428222103 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Util.cpp
 	"Util.h"
+
+1427900142 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Cavalier.cpp
+	<iostream>
+	"Util.h"
+	"Piece.h"
+	"Cavalier.h"
+
+1427899572 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Cavalier.h
+	"Piece.h"
+
+1427899552 /home/kocal/Downloads/Travail/Programmation Objet/Chessquito/include/Reine.h
+	"Piece.h"
+
+1427900134 source:/home/kocal/Downloads/Travail/Programmation Objet/Chessquito/src/Reine.cpp
+	<iostream>
+	"Util.h"
+	"Piece.h"
+	"Reine.h"
 

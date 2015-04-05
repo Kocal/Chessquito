@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <climits>
+#include <cmath>
 
 #include "Util.h"
 
@@ -7,20 +9,16 @@
 #include "Joueur.h"
 
 #include "Piece.h"
+#include "Reine.h"
 #include "Tour.h"
 #include "Fou.h"
+#include "Cavalier.h"
 
 using namespace std;
 
+Partie* nouvellePartie(string date, Joueur* j1, Joueur *j2);
+
 int main() {
-    Partie* partie = new Partie("2015-03-30");
-
-    Joueur* j1 = new Joueur("Alpha");
-    Joueur* j2 = new Joueur("Beta");
-
-    partie->setJoueur(j1);
-    partie->setJoueur(j2);
-
     /*
     delete j1;
 
@@ -182,10 +180,108 @@ int main() {
     */
 
 
+    Joueur *j1 = new Joueur("Alpha");
+    Joueur *j2 = new Joueur("Beta");
 
+    Partie* partie = nouvellePartie("2015-04-01", j1, j2);
+
+    if(partie) delete partie;
     if(j1) delete j1;
     if(j2) delete j2;
-    if(partie) delete partie;
 
     return EXIT_SUCCESS;
+}
+
+Partie* nouvellePartie(string date, Joueur* j1, Joueur *j2) {
+    Partie* partie = new Partie(date);
+
+    // Les 4 premières pièces sont pour le joueur blanc, les 4 dernières pièces pour le joueur noir
+    Piece* pieces[NB_PIECES * 2] = {new Reine(), new Tour(), new Fou(), new Cavalier(),
+                        new Reine(COULEUR_NOIR), new Tour(COULEUR_NOIR), new Fou(COULEUR_NOIR), new Cavalier(COULEUR_NOIR)};
+
+    // C'est pour savoir quelles pièces sont déjà placées
+    bool piecesPlacees[NB_PIECES * 2] = {false, false, false, false,
+                             false, false, false, false};
+
+    // Fait le lien avec le joueur qui va placer une pièce, et une pièce
+    // grâce à la formule : joueurNum * NB_PIECES + i / 2
+    // où i va de 0 à NB_PIECES * 2
+    int joueurNum = 0;
+    Joueur* joueur = NULL;
+
+    // Contient le résultat de la formule précédente
+    int pieceIndex = 0;
+    Piece* pieceEnCours = NULL;
+
+
+    int inIdPiece = 0;
+
+    // Coordonnées de la pièce qui sera placée
+    string co;
+    int x = -1, y = -1;
+
+    partie->setJoueur(j1);
+    partie->setJoueur(j2);
+
+    separation();
+    cout << "Une nouvelle partie va débuter..." << endl << endl;
+    separation();
+
+    // Les joueurs vont poser leurs pions
+    for(int i = 0; i < NB_PIECES * 2; i++) {
+        if(i % 2 == 0) {
+            joueurNum = 0;
+            joueur = j1;
+        } else {
+            joueurNum = 1;
+            joueur = j2;
+        }
+
+        clear();
+
+        cout << "C'est au joueur " << joueur->getNom() << " de placer une pièce." << endl;
+        cout << "Aperçu du plateau : " << endl << *partie << endl;
+        cout << "Etats des pièces du joueur " << joueur->getNom() << " : " << endl;
+
+        // On liste les pièces du joueur j, et l'états de ces dernières
+        for(int j = 0; j < NB_PIECES; j++) {
+            pieceIndex = joueurNum * NB_PIECES + j;
+            cout << "- " << j << " : " << pieces[pieceIndex]->getCode() << "(" << (piecesPlacees[pieceIndex] ? "placée" : "non placée") << ") " << endl;
+        }
+
+        // On demande au joueur de rentrer l'id de la pièce à placer
+        do {
+            cout << "Rentrez un identifiant de pièce à placer : "; cin >> inIdPiece;
+            pieceIndex = inIdPiece + joueurNum * NB_PIECES;
+        } while(inIdPiece < 0 || inIdPiece >= NB_PIECES || piecesPlacees[pieceIndex]);
+
+        // On demande au joueur de rentrer les coordonnées de la pièce précédemment sélectionnée
+        pieceEnCours = pieces[pieceIndex];
+        do {
+            cout << "Rentrez les coordonnées de la pièce " << pieceEnCours->getCode() << " : ";
+            cin >> co;
+            coordonnees(co, x, y);
+        } while(x < 0 || y < 0 || x > NB_PIECES || y > NB_PIECES || partie->getPiece(x, y) != NULL);
+
+        partie->setPiece(pieceEnCours, co);
+        piecesPlacees[pieceIndex] = true;
+    }
+
+    separation();
+
+    cout << "Toutes les pièces ont été placées" << endl;
+
+    separation();
+    cout << "C'est la fin de la partie " << partie << endl;
+    separation();
+
+    for(int i = 0; i < 8; i++) {
+        cout << "Suppression de la pièce " << pieces[i]->getCode() << endl;
+
+        if(pieces[i]) delete pieces[i];
+    }
+
+    separation();
+
+    return partie;
 }

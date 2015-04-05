@@ -131,8 +131,8 @@ ostream& operator<<(ostream &flux, Partie const &p) {
         separationPlateau(plateauTaille);
 
         for(int j = 0; j < plateauTaille; j++) {
-            int x = i;
-            int y = j;
+            int x = j;
+            int y = i;
 
             //flux << "| " << x << ";" << j << " ";
             if(p.getPiece(x, y)) {
@@ -142,7 +142,7 @@ ostream& operator<<(ostream &flux, Partie const &p) {
             }
         }
 
-        flux << "| " << i << endl;
+        flux << "| " << i + 1 << endl;
 
     }
 

@@ -5,6 +5,16 @@ void coordonnees(string n, int &x, int &y) {
     y = n[1] - '1'; // 1 => 0, 2 => 1 ...
 }
 
+void clear(void) {
+    #ifdef __linux__
+    system("clear");
+    #elif _WIN32
+    system("cls");
+    #else
+    system("clear");
+    #endif // __linux
+}
+
 void separation(void) {
     cout << "----------------------------------------------" << endl;
 }
